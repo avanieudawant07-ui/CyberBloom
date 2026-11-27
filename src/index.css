@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --cb-bg: #f7f6fb;
+    --cb-card: #ffffff;
+    --cb-accent: #8b7cc8;
+    --cb-accent-soft: #eae6f7;
+    --cb-deep: #3b2e6e;
+    --cb-text: #22202b;
+    --cb-text-muted: #6d6a7c;
+    --cb-border: #e6e2f0;
+    --cb-warning: #e8a34a;
+    --cb-error: #d96c65;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: #f7f6fb;
+    color: #22202b;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  body {
+    margin: 0;
+    background-color: #f7f6fb;
+    color: #22202b;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+}
+
+.font-mono-tech {
+  font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+/* Soft minimalist card shadow */
+.soft-card {
+  background-color: #ffffff;
+  border: 1px solid #e6e2f0;
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(34, 32, 43, 0.04), 0 4px 14px rgba(34, 32, 43, 0.03);
+}
+
+.soft-card-hover {
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.soft-card-hover:hover {
+  transform: translateY(-2px);
+  border-color: #CFC8E4;
+  box-shadow: 0 6px 20px rgba(59, 46, 110, 0.07);
+}
+
+/* Smooth page transitions */
+@keyframes pageFadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-page-enter {
+  animation: pageFadeSlide 220ms ease-out forwards;
+}
+
+@keyframes modeFade {
+  from {
+    opacity: 0.55;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-mode-switch {
+  animation: modeFade 220ms ease-out;
+}
+
+/* Subtle scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f7f6fb;
+}
+::-webkit-scrollbar-thumb {
+  background: #CFC8E4;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #8b7cc8;
+}
